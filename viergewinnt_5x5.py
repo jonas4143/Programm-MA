@@ -2,13 +2,14 @@ import sys
 import pygame
 
 # ── Einstellungen ──
-GROESSE = 5          # 5 Zeilen x 5 Spalten
+SPALTEN = 5          # Anzahl Spalten
+ZEILEN = 5          # Anzahl Zeilen
 VERBINDEN = 4        # 4 gleiche Steine in einer Reihe = Sieg
-FELD = 120           # Kantenlänge eines Feldes in Pixeln
+FELD = 100           # Kantenlänge eines Feldes in Pixeln
 RADIUS = FELD // 2 - 10
 
-BREITE = GROESSE * FELD
-HOEHE = (GROESSE + 1) * FELD          # eine Extra-Zeile oben für die Vorschau 
+BREITE = SPALTEN * FELD
+HOEHE = (ZEILEN + 1) * FELD          # eine Extra-Zeile oben für die Vorschau 
 
 # ── Farben (RGB) ──
 SCHWARZ = (0, 0, 0)
@@ -30,8 +31,8 @@ SPIELER_2 = 2
 #  SPIELLOGIK
 
 def erstelle_brett():
-    """Leeres 5x5-Feld als 2D-Liste. 0 = leer."""
-    return [[0] * GROESSE for _ in range(GROESSE)]
+    """Leeres Feld (ZEILEN x SPALTEN) als 2D-Liste. 0 = leer."""
+    return [[0] * SPALTEN for _ in range(ZEILEN)]
 
 
 def spalte_frei(brett, spalte):
@@ -41,7 +42,7 @@ def spalte_frei(brett, spalte):
 
 def stein_setzen(brett, spalte, spieler):
     """Stein fällt bis zur untersten freien Zeile. Gibt (zeile, spalte) zurück."""
-    for zeile in range(GROESSE - 1, -1, -1):
+    for zeile in range(ZEILEN - 1, -1, -1):
         if brett[zeile][spalte] == 0:
             brett[zeile][spalte] = spieler
             return zeile, spalte
@@ -54,13 +55,13 @@ def hat_gewonnen(brett, spieler):
     Gibt die Gewinnfelder als Liste zurück, sonst None.
     """
     richtungen = [(0, 1), (1, 0), (1, 1), (1, -1)]
-    for zeile in range(GROESSE):
-        for spalte in range(GROESSE):
+    for zeile in range(ZEILEN):
+        for spalte in range(SPALTEN):
             for dz, ds in richtungen:
                 felder = []
                 for i in range(VERBINDEN):
                     z, s = zeile + dz * i, spalte + ds * i
-                    if 0 <= z < GROESSE and 0 <= s < GROESSE and brett[z][s] == spieler:
+                    if 0 <= z < ZEILEN and 0 <= s < SPALTEN and brett[z][s] == spieler:
                         felder.append((z, s))
                     else:
                         break
@@ -71,7 +72,7 @@ def hat_gewonnen(brett, spieler):
 
 def brett_voll(brett):
     """True, wenn keine Spalte mehr frei ist (Unentschieden)."""
-    return all(not spalte_frei(brett, s) for s in range(GROESSE))
+    return all(not spalte_frei(brett, s) for s in range(SPALTEN))
 
 
 
@@ -83,8 +84,8 @@ def brett_voll(brett):
 def zeichne_brett(fenster, brett, gewinn_felder=None):
     """Zeichnet das Spielfeld mit allen Steinen."""
     fenster.fill(BLAU)
-    for zeile in range(GROESSE):
-        for spalte in range(GROESSE):
+    for zeile in range(ZEILEN):
+        for spalte in range(SPALTEN):
             x = spalte * FELD + FELD // 2
             y = (zeile + 1) * FELD + FELD // 2      # +1 wegen Vorschau-Zeile
 
@@ -125,7 +126,7 @@ def zeichne_nachricht(fenster, text, farbe):
 def main():
     pygame.init()
     fenster = pygame.display.set_mode((BREITE, HOEHE))
-    pygame.display.set_caption("Vier gewinnt – 5x5")
+    pygame.display.set_caption(f"Vier gewinnt – {SPALTEN}x{ZEILEN}")
 
     brett = erstelle_brett()
     aktueller_spieler = SPIELER_1
@@ -156,11 +157,11 @@ def main():
                 neu_zeichnen()
 
             if ereignis.type == pygame.MOUSEMOTION and spiel_laeuft:
-                maus_spalte = min(max(ereignis.pos[0] // FELD, 0), GROESSE - 1)
+                maus_spalte = min(max(ereignis.pos[0] // FELD, 0), SPALTEN - 1)
                 neu_zeichnen()
 
             if ereignis.type == pygame.MOUSEBUTTONDOWN and spiel_laeuft:
-                spalte = min(max(ereignis.pos[0] // FELD, 0), GROESSE - 1)
+                spalte = min(max(ereignis.pos[0] // FELD, 0), SPALTEN - 1)
                 if not spalte_frei(brett, spalte):
                     continue
 
