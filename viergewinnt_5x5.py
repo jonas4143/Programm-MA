@@ -1,5 +1,7 @@
 import sys
 import pygame
+import math
+import time
 
 # ── Einstellungen ──
 SPALTEN = 5          # Anzahl Spalten
@@ -22,6 +24,16 @@ GRUEN = (0, 160, 80)                  # Gewinn-Hervorhebung
 
 SPIELER_1 = 1
 SPIELER_2 = 2
+
+ICH = SPIELER_1
+GEGNER = SPIELER_2
+
+ICH_BEGINNT = True
+
+ZEIT_LIMIT_SEKUNDEN = 5.0
+GEWINN_WERT = 100_000
+SIEG_SCHWELLE = GEWINN_WERT - 2_000
+FENSTER_WERT = {0: 0, 1: 1, 2: 10, 3: 50, 4:1000}
 
 
 
@@ -49,6 +61,15 @@ def stein_setzen(brett, spalte, spieler):
     return None
 
 
+def stein_zurueckziehen(brett, zeile, spalte):
+    """
+    Gegenstück zu Stein setzen. Wird nur von der Engine gebraucht,
+    welche die Steine platziert, dann mögliche Züge durchrechnet und
+    den Stein dann wieder entfernt
+    """
+    brett[zeile][spalte] = 0
+
+
 def hat_gewonnen(brett, spieler):
     """
     Prüft alle 4 Richtungen auf VERBINDEN gleiche Steine.
@@ -60,7 +81,8 @@ def hat_gewonnen(brett, spieler):
             for dz, ds in richtungen:
                 felder = []
                 for i in range(VERBINDEN):
-                    z, s = zeile + dz * i, spalte + ds * i
+                    z = zeile + dz * i
+                    s = spalte +ds *i
                     if 0 <= z < ZEILEN and 0 <= s < SPALTEN and brett[z][s] == spieler:
                         felder.append((z, s))
                     else:
@@ -70,9 +92,48 @@ def hat_gewonnen(brett, spieler):
     return None
 
 
+def gewinn_durch_letzten_zug(brett, zeile, spalte, spieler):
+    """
+    Prüft nur die 4 Linien durch das zuletzt gesetzte Feld auf VERBINDEN.
+    Das genügt, weil sich ein neuer Sieg durch einen Zug nur über Linien
+    ergeben, dir durch genau dieses neue Feld verlaufen.
+    Diese Version ist viel schneller als hat_gewonnen().
+    """
+    richtungen = [(0, 1), (1, 0), (1, 1), (1, -1)]
+    for dz, ds in richtungen:
+        anzahl = 1 # Das neu gesetzte Feld zählt schon mit
+
+        z, s = zeile +dz, spalte + ds
+        while 0 <= z < ZEILEN and 0 <= SPALTEN and brett[z][s] == spieler:
+            anzahl += 1
+            z += dz
+            s += ds
+
+        z, s = zeile - dz, spalte - ds
+        while 0 <= z < ZEILEN and 0 <= s < SPALTEN and brett[z][s] == spieler:
+            anzahl += 1
+            z -= dz
+            s -= ds
+
+        if anzahl >= VERBINDEN:
+            return True
+    return False
+
+
 def brett_voll(brett):
     """True, wenn keine Spalte mehr frei ist (Unentschieden)."""
     return all(not spalte_frei(brett, s) for s in range(SPALTEN))
+
+
+
+
+
+
+# ENGINE
+
+
+
+
 
 
 
