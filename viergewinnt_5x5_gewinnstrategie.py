@@ -427,9 +427,9 @@ def main():
                     spiel_laeuft = False
                     zeichne_brett(fenster, brett, gewinn_felder)
                     farbe = ROT if aktueller_spieler == SPIELER_1 else GELB
-                    wer = "Ich" if aktueller_spieler == ICH else "Gegner"
-                    zeichne_nachricht(fenster, f"{wer} gewinne!    (R = neu)"
-                                      if wer == "Ich" else f"{wer} gewinnt!    (R = neu)",
+                    wer = "Rot" if aktueller_spieler == ICH else "Gelb"
+                    zeichne_nachricht(fenster, f"{wer} gewinnt!    (R = neu)"
+                                      if wer == "Rot" else f"{wer} gewinnt!    (R = neu)",
                                       farbe)
                     pygame.display.update()
                     continue
