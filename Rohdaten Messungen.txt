@@ -1,0 +1,190 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python --version
+Python 3.11.9
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python full.py 3000
+RESULT 0 2 63.2s nodes 5303847 cache 2841514
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python exp_b.py
+B first move col 0 -> 0 Unentschieden 27.5s nodes 2873814
+B first move col 1 -> 0 Unentschieden 19.9s nodes 1511147
+B first move col 2 -> 0 Unentschieden 5.8s nodes 390540
+B first move col 3 -> 0 Unentschieden 22.7s nodes 1436632
+B first move col 4 -> 0 Unentschieden 32.7s nodes 1954228
+B total 108.7s cache 4194416
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python exp_c.py
+C [2, 31, 0.01, 21, 0.0, 26, 0.0, 26, 0.01, -1, -1, -1, -1]
+C [3, 156, 0.03, 66, 0.01, 68, 0.01, 68, 0.01, 14, 14, 14, 14]
+C [4, 781, 0.14, 224, 0.03, 271, 0.04, 253, 0.04, -3, -3, -3, -3]
+C [5, 3906, 0.76, 1107, 0.2, 650, 0.09, 562, 0.08, 19, 19, 19, 19]
+C [6, 19526, 4.84, 2940, 0.51, 1876, 0.34, 1505, 0.23, -5, -5, -5, -5]
+C [7, 97506, 19.7, 11936, 2.26, 4195, 0.8, 3035, 0.46, 20, 20, 20, 20]
+C [8, 478366, 90.17, 28425, 4.24, 20967, 2.87, 14115, 1.88, -7, -7, -7, -7]
+C [9, None, None, 109352, 16.73, 47796, 7.06, 25558, 3.32, None, 20, 20, 20]
+C [10, None, None, 184796, 26.78, 125170, 16.7, 55589, 6.7, None, -7, -7, -7]
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python exp_d1.py
+D1 run 1 (-7, 0, 8) dt 5.0 cache 11890
+D1 run 2 (20, 2, 9) dt 5.0 cache 24863
+D1 run 3 (-7, 1, 10) dt 5.0 cache 38810
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python exp_d.py
+D2 steine 0 am zug 1 frei 25 res (-7, 0, 8) dt 5.0
+D2 steine 1 am zug 2 frei 24 res (20, 1, 8) dt 5.0
+D2 steine 2 am zug 1 frei 23 res (-2, 2, 8) dt 5.06
+D2 steine 3 am zug 2 frei 22 res (1, 3, 8) dt 5.0
+D2 steine 4 am zug 1 frei 21 res (-30, 2, 10) dt 5.0
+D2 steine 5 am zug 2 frei 20 res (-30, 3, 9) dt 5.0
+D2 steine 6 am zug 1 frei 19 res (20, 3, 11) dt 5.0
+D2 steine 7 am zug 2 frei 18 res (19, 1, 12) dt 5.0
+D2 steine 8 am zug 1 frei 17 res (90, 3, 11) dt 5.0
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python exp_f.py 200 240
+F positions 200 agree 200 outcome counts (P1 view) {1: 84, 0: 52, -1: 64} 69s
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python exp_g.py
+G 10 bester Wert 1 Wert Empfehlung 1 Spalte 1 Tiefe 13 optimal
+G 6 bester Wert 1 Wert Empfehlung 1 Spalte 4 Tiefe 8 optimal
+G 14 bester Wert 1 Wert Empfehlung 1 Spalte 4 Tiefe 1 optimal
+G 12 bester Wert -1 Wert Empfehlung -1 Spalte 3 Tiefe 4 optimal
+G 10 bester Wert 0 Wert Empfehlung 0 Spalte 1 Tiefe 12 optimal
+G 4 bester Wert 1 Wert Empfehlung 0 Spalte 0 Tiefe 8 NICHT optimal
+G 8 bester Wert 0 Wert Empfehlung 0 Spalte 1 Tiefe 11 optimal
+G 10 bester Wert 1 Wert Empfehlung 1 Spalte 1 Tiefe 13 optimal
+G 4 bester Wert 0 Wert Empfehlung 0 Spalte 3 Tiefe 8 optimal
+G 14 bester Wert 1 Wert Empfehlung 1 Spalte 2 Tiefe 9 optimal
+G 4 bester Wert 0 Wert Empfehlung 0 Spalte 3 Tiefe 8 optimal
+G 8 bester Wert 1 Wert Empfehlung 1 Spalte 3 Tiefe 11 optimal
+G 4 bester Wert 1 Wert Empfehlung 0 Spalte 3 Tiefe 8 NICHT optimal
+G 8 bester Wert 1 Wert Empfehlung 1 Spalte 1 Tiefe 1 optimal
+G 6 bester Wert -1 Wert Empfehlung -1 Spalte 2 Tiefe 10 optimal
+G 12 bester Wert 0 Wert Empfehlung 0 Spalte 3 Tiefe 13 optimal
+G 14 bester Wert 1 Wert Empfehlung 1 Spalte 2 Tiefe 1 optimal
+G 6 bester Wert 1 Wert Empfehlung 1 Spalte 3 Tiefe 1 optimal
+G 12 bester Wert 1 Wert Empfehlung 1 Spalte 3 Tiefe 13 optimal
+G 14 bester Wert 1 Wert Empfehlung 1 Spalte 3 Tiefe 3 optimal
+G 4 bester Wert 1 Wert Empfehlung 0 Spalte 1 Tiefe 8 NICHT optimal
+G 4 bester Wert 0 Wert Empfehlung 0 Spalte 2 Tiefe 8 optimal
+G 4 bester Wert 1 Wert Empfehlung 1 Spalte 2 Tiefe 9 optimal
+G 14 bester Wert 0 Wert Empfehlung 0 Spalte 1 Tiefe 11 optimal
+G-SUM 21 von 24 693s
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte> python exp_e.py 0.5
+E Zufall engine_first True 0 Sieg moves 11 avg depth 5.8 2.5s
+E Zufall engine_first True 1 Sieg moves 9 avg depth 5.8 2.0s
+E Zufall engine_first True 2 Sieg moves 9 avg depth 5.8 2.0s
+E Zufall engine_first True 3 Sieg moves 15 avg depth 6.0 3.5s
+E Zufall engine_first True 4 Sieg moves 9 avg depth 5.4 2.0s
+E Zufall engine_first True 5 Sieg moves 11 avg depth 5.5 2.5s
+E Zufall engine_first True 6 Sieg moves 9 avg depth 5.6 2.0s
+E Zufall engine_first True 7 Sieg moves 17 avg depth 6.3 3.3s
+E Zufall engine_first True 8 Sieg moves 19 avg depth 5.9 3.5s
+E Zufall engine_first True 9 Sieg moves 11 avg depth 6.5 2.5s
+E Zufall engine_first True 10 Sieg moves 9 avg depth 6.4 2.0s
+E Zufall engine_first True 11 Sieg moves 19 avg depth 7.3 3.3s
+E Zufall engine_first True 12 Sieg moves 17 avg depth 7.1 3.8s
+E Zufall engine_first True 13 Sieg moves 11 avg depth 7.2 2.5s
+E Zufall engine_first True 14 Sieg moves 11 avg depth 7.3 2.5s
+E Zufall engine_first True 15 Sieg moves 9 avg depth 6.4 2.0s
+E Zufall engine_first True 16 Sieg moves 9 avg depth 6.0 1.5s
+E Zufall engine_first True 17 Sieg moves 9 avg depth 5.8 2.0s
+E Zufall engine_first True 18 Sieg moves 13 avg depth 6.6 2.8s
+E Zufall engine_first True 19 Sieg moves 11 avg depth 7.3 2.2s
+E Zufall engine_first False 0 Sieg moves 10 avg depth 6.2 2.0s
+E Zufall engine_first False 1 Sieg moves 12 avg depth 5.3 2.5s
+E Zufall engine_first False 2 Sieg moves 14 avg depth 6.7 2.8s
+E Zufall engine_first False 3 Sieg moves 16 avg depth 6.4 3.0s
+E Zufall engine_first False 4 Sieg moves 12 avg depth 5.7 2.5s
+E Zufall engine_first False 5 Sieg moves 16 avg depth 6.1 3.2s
+E Zufall engine_first False 6 Sieg moves 8 avg depth 5.2 1.5s
+E Zufall engine_first False 7 Sieg moves 20 avg depth 6.3 3.1s
+E Zufall engine_first False 8 Sieg moves 10 avg depth 6.4 2.0s
+E Zufall engine_first False 9 Sieg moves 14 avg depth 6.0 2.5s
+E Zufall engine_first False 10 Sieg moves 14 avg depth 6.7 2.7s
+E Zufall engine_first False 11 Sieg moves 22 avg depth 6.7 3.1s
+E Zufall engine_first False 12 Sieg moves 10 avg depth 6.4 2.0s
+E Zufall engine_first False 13 Sieg moves 12 avg depth 5.7 2.5s
+E Zufall engine_first False 14 Sieg moves 18 avg depth 7.4 2.7s
+E Zufall engine_first False 15 Sieg moves 12 avg depth 5.3 2.0s
+E Zufall engine_first False 16 Sieg moves 14 avg depth 5.4 2.6s
+E Zufall engine_first False 17 Sieg moves 14 avg depth 6.3 2.9s
+E Zufall engine_first False 18 Sieg moves 20 avg depth 7.2 3.0s
+E Zufall engine_first False 19 Sieg moves 18 avg depth 6.1 2.8s
+E Gierig engine_first True 0 Sieg moves 17 avg depth 8.2 3.1s
+E Gierig engine_first True 1 Sieg moves 19 avg depth 7.8 3.0s
+E Gierig engine_first True 2 Sieg moves 19 avg depth 6.0 3.1s
+E Gierig engine_first True 3 Sieg moves 17 avg depth 6.7 2.1s
+E Gierig engine_first True 4 Sieg moves 17 avg depth 6.0 2.6s
+E Gierig engine_first True 5 Sieg moves 21 avg depth 6.3 3.3s
+E Gierig engine_first True 6 Sieg moves 17 avg depth 6.6 3.0s
+E Gierig engine_first True 7 Sieg moves 21 avg depth 7.3 3.3s
+E Gierig engine_first True 8 Sieg moves 23 avg depth 7.4 3.0s
+E Gierig engine_first True 9 Sieg moves 25 avg depth 7.2 3.6s
+E Gierig engine_first True 10 Sieg moves 19 avg depth 7.8 3.5s
+E Gierig engine_first True 11 Sieg moves 19 avg depth 6.3 3.5s
+E Gierig engine_first True 12 Sieg moves 13 avg depth 7.6 2.8s
+E Gierig engine_first True 13 Sieg moves 21 avg depth 7.0 3.3s
+E Gierig engine_first True 14 Sieg moves 15 avg depth 8.5 3.0s
+E Gierig engine_first True 15 Sieg moves 13 avg depth 7.1 3.0s
+E Gierig engine_first True 16 Sieg moves 13 avg depth 8.1 2.6s
+E Gierig engine_first True 17 Sieg moves 19 avg depth 7.0 2.9s
+E Gierig engine_first True 18 Sieg moves 17 avg depth 7.0 2.5s
+E Gierig engine_first True 19 Sieg moves 21 avg depth 8.1 3.1s
+E Gierig engine_first False 0 Sieg moves 16 avg depth 7.8 3.1s
+E Gierig engine_first False 1 Sieg moves 22 avg depth 6.6 2.7s
+E Gierig engine_first False 2 Sieg moves 10 avg depth 6.0 2.0s
+E Gierig engine_first False 3 Unentschieden moves 25 avg depth 7.3 3.2s
+E Gierig engine_first False 4 Sieg moves 20 avg depth 7.1 2.8s
+E Gierig engine_first False 5 Sieg moves 16 avg depth 6.0 2.5s
+E Gierig engine_first False 6 Sieg moves 22 avg depth 6.9 3.0s
+E Gierig engine_first False 7 Sieg moves 16 avg depth 7.5 2.5s
+E Gierig engine_first False 8 Sieg moves 18 avg depth 6.0 3.0s
+E Gierig engine_first False 9 Sieg moves 18 avg depth 6.3 3.2s
+E Gierig engine_first False 10 Sieg moves 24 avg depth 7.0 3.1s
+E Gierig engine_first False 11 Sieg moves 22 avg depth 7.2 3.0s
+E Gierig engine_first False 12 Sieg moves 18 avg depth 5.3 3.1s
+E Gierig engine_first False 13 Sieg moves 18 avg depth 7.3 3.0s
+E Gierig engine_first False 14 Unentschieden moves 25 avg depth 8.3 3.1s
+E Gierig engine_first False 15 Sieg moves 18 avg depth 7.6 2.8s
+E Gierig engine_first False 16 Sieg moves 20 avg depth 7.1 2.6s
+E Gierig engine_first False 17 Sieg moves 20 avg depth 6.7 3.1s
+E Gierig engine_first False 18 Sieg moves 22 avg depth 6.5 3.2s
+E Gierig engine_first False 19 Sieg moves 18 avg depth 6.6 3.1s
+E Perfekt engine_first True 0 Unentschieden moves 25 avg depth 7.8 36.7s
+E Perfekt engine_first True 1 Unentschieden moves 25 avg depth 8.2 37.1s
+E Perfekt engine_first True 2 Unentschieden moves 25 avg depth 8.1 42.7s
+E Perfekt engine_first True 3 Niederlage moves 24 avg depth 7.9 29.8s
+E Perfekt engine_first True 4 Niederlage moves 24 avg depth 7.2 34.2s
+E Perfekt engine_first True 5 Unentschieden moves 25 avg depth 8.4 37.8s
+E Perfekt engine_first True 6 Niederlage moves 24 avg depth 8.3 31.1s
+E Perfekt engine_first True 7 Niederlage moves 24 avg depth 8.8 30.1s
+E Perfekt engine_first True 8 Niederlage moves 24 avg depth 9.1 29.7s
+E Perfekt engine_first True 9 Niederlage moves 24 avg depth 8.4 32.1s
+E Perfekt engine_first False 0 Unentschieden moves 25 avg depth 7.7 22.3s
+E Perfekt engine_first False 1 Unentschieden moves 25 avg depth 8.2 12.3s
+E Perfekt engine_first False 2 Niederlage moves 23 avg depth 7.5 33.8s
+E Perfekt engine_first False 3 Unentschieden moves 25 avg depth 7.0 28.9s
+E Perfekt engine_first False 4 Unentschieden moves 25 avg depth 8.4 18.5s
+E Perfekt engine_first False 5 Niederlage moves 25 avg depth 7.8 28.4s
+E Perfekt engine_first False 6 Unentschieden moves 25 avg depth 7.5 23.1s
+E Perfekt engine_first False 7 Unentschieden moves 25 avg depth 7.3 28.6s
+E Perfekt engine_first False 8 Unentschieden moves 25 avg depth 8.1 10.7s
+E Perfekt engine_first False 9 Niederlage moves 25 avg depth 7.9 28.2s
+SUMMARY
+E-SUM Zufall engine_first {'Sieg': 20} avg moves 11.9 avg depth 6.3
+E-SUM Zufall opp_first {'Sieg': 20} avg moves 14.3 avg depth 6.2
+E-SUM Gierig engine_first {'Sieg': 20} avg moves 18.3 avg depth 7.2
+E-SUM Gierig opp_first {'Sieg': 18, 'Unentschieden': 2} avg moves 19.4 avg depth 6.9
+E-SUM Perfekt engine_first {'Unentschieden': 4, 'Niederlage': 6} avg moves 24.4 avg depth 8.2
+E-SUM Perfekt opp_first {'Unentschieden': 7, 'Niederlage': 3} avg moves 24.8 avg depth 7.8
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte>  python exp_h.py
+H perfekt engine_first True 0 Niederlage moves 24 avg depth 9.3 50s
+H perfekt engine_first True 1 Unentschieden moves 25 avg depth 8.8 117s
+H perfekt engine_first True 2 Unentschieden moves 25 avg depth 9.0 115s
+H perfekt engine_first True 3 Unentschieden moves 25 avg depth 8.6 126s
+H perfekt engine_first True 4 Unentschieden moves 25 avg depth 8.7 119s
+H perfekt engine_first True 5 Unentschieden moves 25 avg depth 8.5 117s
+H-SUM engine_first {'Niederlage': 1, 'Unentschieden': 5}
+H perfekt engine_first False 0 Unentschieden moves 25 avg depth 8.6 66s
+H perfekt engine_first False 1 Unentschieden moves 25 avg depth 9.8 29s
+H perfekt engine_first False 2 Unentschieden moves 25 avg depth 9.7 29s
+H perfekt engine_first False 3 Unentschieden moves 25 avg depth 9.4 44s
+H perfekt engine_first False 4 Niederlage moves 25 avg depth 8.8 63s
+H perfekt engine_first False 5 Niederlage moves 25 avg depth 8.8 66s
+H-SUM opp_first {'Unentschieden': 4, 'Niederlage': 2}
+PS D:\OneDrive - SBL\Gymnasium\Maturaarbeit\Messskripte\messskripte>
